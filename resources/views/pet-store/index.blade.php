@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='http://localhost:5173/resources/css/app.css'>
 </head>
 <body>
-    <div class='container text-center p-2 m-2'>
+    <div class='container text-center p-2'>
         <h1 class='text-2xl font-bold p-2'>Welcome in PetStore!</h1>
         <h3 class='text-xl font-bold mb-2 p-2'>Select your action:</h3>
         <ol class='p-2'>
