@@ -13,28 +13,28 @@
          </a>
       </nav>
       <div class='container mx-auto'>
-        <h2 class='text-2xl font-bold mb-4 mt-2'>Sold pet list</h2>
-        <div class='container text-center mt-4 p-2'>
+         <h2 class='text-2xl font-bold mb-4 mt-2'>Sold pet list</h2>
+         <div class='container text-center mt-4 p-2'>
             @if ($errors->any())
-                <div class="text-red-400 font-bold">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="text-red-400 font-bold">
+               <ul>
+                  @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                  @endforeach
+               </ul>
+            </div>
             @endif
             @if (session('error'))
-                <div class='text-red-400 font-bold'>
-                    {{ session('error') }}
-                </div>
+            <div class='text-red-400 font-bold'>
+               {{ session('error') }}
+            </div>
             @elseif(session('success'))
-                <div class='text-green-400 font-bold'>
-                    {{ session('success') }}
-                </div>
+            <div class='text-green-400 font-bold'>
+               {{ session('success') }}
+            </div>
             @endif
-        </div>
-        <div id='compact-table'>
+         </div>
+         <div id='compact-table'>
             <table class='min-w-full table-auto text-sm border-collapse border border-gray-300'>
                <thead class='bg-gray-200'>
                   <tr>
@@ -56,16 +56,16 @@
                      <td class='px-2 py-1 border border-gray-300'>{{ $pet['status'] }}</td>
                      <td class='px-2 py-1 border border-gray-300'>
                         @foreach($pet['tags'] as $tag)
-                            <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $tag['name'] ?? 'No tag name' }}</span>
+                        <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $tag['name'] ?? 'No tag name' }}</span>
                         @endforeach
                      </td>
                      <td class='px-2 py-1 border border-gray-300'>
                         @if (!empty($pet['photoUrls']))
-                            @foreach($pet['photoUrls'] as $url)
-                                <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $url }}</span>
-                            @endforeach
+                        @foreach($pet['photoUrls'] as $url)
+                        <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $url }}</span>
+                        @endforeach
                         @else
-                            <p>No url</p>
+                        <p>No url</p>
                         @endif
                      </td>
                      <td class="px-2 py-1">
@@ -80,9 +80,9 @@
                   @endforeach
                </tbody>
             </table>
-        </div>
-        <h2 class='text-2xl font-bold mb-4 mt-2'>Pending pet list</h2>
-        <div id='compact-table'>
+         </div>
+         <h2 class='text-2xl font-bold mb-4 mt-2'>Pending pet list</h2>
+         <div id='compact-table'>
             <table class='min-w-full table-auto text-sm border-collapse border border-gray-300'>
                <thead class='bg-gray-200'>
                   <tr>
@@ -104,16 +104,16 @@
                      <td class='px-2 py-1 border border-gray-300'>{{ $pet['status'] }}</td>
                      <td class='px-2 py-1 border border-gray-300'>
                         @foreach($pet['tags'] as $tag)
-                            <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $tag['name'] ?? 'No tag name' }}</span>
+                        <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $tag['name'] ?? 'No tag name' }}</span>
                         @endforeach
                      </td>
                      <td class='px-2 py-1 border border-gray-300'>
                         @if (!empty($pet['photoUrls']))
-                            @foreach($pet['photoUrls'] as $url)
-                                <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $url }}</span>
-                            @endforeach
+                        @foreach($pet['photoUrls'] as $url)
+                        <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $url }}</span>
+                        @endforeach
                         @else
-                            <p>No url</p>
+                        <p>No url</p>
                         @endif
                      </td>
                      <td class="px-2 py-1">
@@ -128,9 +128,9 @@
                   @endforeach
                </tbody>
             </table>
-        </div>
-        <h2 class='text-2xl font-bold mb-4 mt-2'>Available pet list</h2>
-        <div id='compact-table'>
+         </div>
+         <h2 class='text-2xl font-bold mb-4 mt-2'>Available pet list</h2>
+         <div id='compact-table'>
             <table class='min-w-full table-auto text-sm border-collapse border border-gray-300'>
                <thead class='bg-gray-200'>
                   <tr>
@@ -152,16 +152,16 @@
                      <td class='px-2 py-1 border border-gray-300 break-all'>{{ $pet['status'] }}</td>
                      <td class='px-2 py-1 border border-gray-300 break-all'>
                         @foreach($pet['tags'] as $tag)
-                            <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $tag['name'] ?? 'No tag name' }}</span>
+                        <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $tag['name'] ?? 'No tag name' }}</span>
                         @endforeach
                      </td>
                      <td class='px-2 py-1 border border-gray-300 break-all'>
                         @if (!empty($pet['photoUrls']))
-                            @foreach($pet['photoUrls'] as $url)
-                                <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $url }}</span>
-                            @endforeach
+                        @foreach($pet['photoUrls'] as $url)
+                        <span class='inline-block bg-blue-200 px-1 py-0.5 text-blue-800 rounded-full text-xs mr-1'>{{ $url }}</span>
+                        @endforeach
                         @else
-                            <p>No url</p>
+                        <p>No url</p>
                         @endif
                      </td>
                      <td class="px-2 py-1">
@@ -176,7 +176,7 @@
                   @endforeach
                </tbody>
             </table>
-        </div>
+         </div>
       </div>
    </body>
 </html>
