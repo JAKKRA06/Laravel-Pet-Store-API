@@ -35,6 +35,7 @@ class PetStoreController extends Controller
             if ($response->successful()) {
                 return view("pet-store.edit", ["pet" => $response->json()]);
             }
+            // @todo add logger
             return redirect()
                 ->route("pet.show.all")
                 ->with("error", "Something went wrong. Try again! HTTP code:" . $response->status());
@@ -67,7 +68,6 @@ class PetStoreController extends Controller
                 "name" => $validatedData["category"]["name"]
             ]
         ];
-
 
         $bodyTags = [];
         $requestTags = explode(",", $validatedData["tags"]);
@@ -151,6 +151,7 @@ class PetStoreController extends Controller
                     ->route("pet.index")
                     ->with("success", "Pet resource deleted! ID: " . $id);
             }
+            // @todo add logger
             return redirect()
                 ->route("pet.show.all")
                 ->with("error", "Something went wrong. Try again! HTTP code:" . $response->status());
@@ -192,7 +193,7 @@ class PetStoreController extends Controller
                         : [],
                 ]);
             }
-
+            // @todo add logger
             return redirect()
                 ->route("pet.index")
                 ->with("error", "Error! Try again! HTTP code:" . $response->status());
